@@ -1,3 +1,6 @@
+parser/
+queries/xresources/
+
 # Rust artifacts
 Cargo.lock
 target/

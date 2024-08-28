@@ -50,7 +50,15 @@
     {
       "scope": "source.xresources",
       "highlights": "queries/highlights.scm",
-      "injection-regex": "^xresources$"
+      "injection-regex": "^xresources$",
+      "file-types": [
+        "xdefaults",
+        "xresources",
+        "Xdefaults",
+        "Xresources",
+        ".Xdefaults",
+        ".Xresources"
+      ]
     }
   ]
 }
