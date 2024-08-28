@@ -51,6 +51,6 @@ body:
       description: Minimal code to reproduce this issue. Ideally this should be reproducible with the C library or the tree-sitter cli, do not suggest an editor or external tool.
       placeholder: |
         Example code that causes the issue
-      render: xresources
+      render: text
     validations:
       required: false
