@@ -23,7 +23,7 @@ export default grammar({
       $.comment,
       $.include_directive,
       $.define_directive,
-      $.resource
+      $.resource,
     ),
 
     comment: _ => token.immediate(seq("!", repeat(ANY_CHAR))),
@@ -37,13 +37,16 @@ export default grammar({
       field('name', $.components),
       ':',
       repeat(WHITE_SPACE),
-      field('value', $.resource_value)
+      field('value', $.resource_value),
     ),
 
     components: $ => seq(
       optional($.binding),
-      repeat(seq(choice($.component, alias('?', $.any_component)), $.binding)),
-      $.component
+      repeat(seq(
+        choice($.component, alias('?', $.any_component)),
+        repeat1($.binding)),
+      ),
+      $.component,
     ),
     binding: _ => choice('.', '*'),
     component: _ => /[a-zA-Z0-9_-]+/,

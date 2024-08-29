@@ -71,6 +71,33 @@ foo.?.baz: bon
     value: (resource_value)))
 
 ==================================================
+Resources with a sequence of multiple bindings
+==================================================
+a.*.b: c
+f....g: c
+
+--------------------------------------------------
+
+(resources
+  (resource
+    name: (components
+      (component)
+      (binding)
+      (binding)
+      (binding)
+      (component))
+    value: (resource_value))
+  (resource
+    name: (components
+      (component)
+      (binding)
+      (binding)
+      (binding)
+      (binding)
+      (component))
+    value: (resource_value)))
+
+==================================================
 Escape sequences
 ==================================================
 space: \ a

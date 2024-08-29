@@ -222,8 +222,11 @@
                 ]
               },
               {
-                "type": "SYMBOL",
-                "name": "binding"
+                "type": "REPEAT1",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "binding"
+                }
               }
             ]
           }
