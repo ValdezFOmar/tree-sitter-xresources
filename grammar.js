@@ -51,8 +51,8 @@ export default grammar({
     binding: _ => choice('.', '*'),
     component: _ => /[a-zA-Z0-9_-]+/,
 
-    escape_sequence: _ => token(seq('\\', choice('n', '\\', '\t', ' ', /[0-7]{3}/))),
-    resource_value: $ => repeat1(choice(ANY_CHAR, $.escape_sequence, alias('\\\n', '\\'))),
+    escape_sequence: _ => token(seq('\\', choice('n', '\\', '\t', '\n', ' ', /[0-7]{3}/))),
+    resource_value: $ => repeat1(choice(ANY_CHAR, $.escape_sequence)),
     string: $ => seq('"', alias(/[^\n"]*/, $.string_content), '"'),
   },
 });

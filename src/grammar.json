@@ -280,6 +280,10 @@
               },
               {
                 "type": "STRING",
+                "value": "\n"
+              },
+              {
+                "type": "STRING",
                 "value": " "
               },
               {
@@ -303,15 +307,6 @@
           {
             "type": "SYMBOL",
             "name": "escape_sequence"
-          },
-          {
-            "type": "ALIAS",
-            "content": {
-              "type": "STRING",
-              "value": "\\\n"
-            },
-            "named": false,
-            "value": "\\"
           }
         ]
       }

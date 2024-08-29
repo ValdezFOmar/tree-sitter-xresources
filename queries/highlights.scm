@@ -30,7 +30,4 @@
   ":"
 ] @punctuation.delimiter
 
-[
-  "\\"
-  (escape_sequence)
-] @string.escape
+(escape_sequence) @string.escape
