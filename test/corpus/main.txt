@@ -1,0 +1,142 @@
+==================================================
+Comments
+==================================================
+!Hello world
+! foo
+!bar   
+
+--------------------------------------------------
+(resources
+  (comment)
+  (comment)
+  (comment))
+
+==================================================
+Resources with dot binding
+==================================================
+Hello.world: text
+foo.bar.baz: bon
+eggs: ham
+
+--------------------------------------------------
+
+(resources
+  (resource
+    name: (components
+      (component)
+      (binding)
+      (component))
+    value: (resource_value))
+  (resource
+    name: (components
+      (component)
+      (binding)
+      (component)
+      (binding)
+      (component))
+    value: (resource_value))
+  (resource
+    name: (components
+      (component))
+    value: (resource_value)))
+
+==================================================
+Resources with wildcards
+==================================================
+Hello*world: text
+foo.?.baz: bon
+*eggs: ham
+
+--------------------------------------------------
+
+(resources
+  (resource
+    name: (components
+      (component)
+      (binding)
+      (component))
+    value: (resource_value))
+  (resource
+    name: (components
+      (component)
+      (binding)
+      (any_component)
+      (binding)
+      (component))
+    value: (resource_value))
+  (resource
+    name: (components
+      (binding)
+      (component))
+    value: (resource_value)))
+
+==================================================
+Escape sequences
+==================================================
+space: \ a
+tab: \	t
+newline: \n\
+  more text
+backslash: \\
+octal: \033[31m
+
+--------------------------------------------------
+
+(resources
+  (resource
+    name: (components
+      (component))
+    value: (resource_value
+      (escape_sequence)))
+  (resource
+    name: (components
+      (component))
+    value: (resource_value
+      (escape_sequence)))
+  (resource
+    name: (components
+      (component))
+    value: (resource_value
+      (escape_sequence)))
+  (resource
+    name: (components
+      (component))
+    value: (resource_value
+      (escape_sequence)))
+  (resource
+    name: (components
+      (component))
+    value: (resource_value
+      (escape_sequence))))
+
+==================================================
+#include directive
+==================================================
+#include "some/file"
+#include "defaults"
+
+--------------------------------------------------
+
+(resources
+  (include_directive
+    file: (string
+      (string_content)))
+  (include_directive
+    file: (string
+      (string_content))))
+
+==================================================
+#define directive
+==================================================
+#define SOME_CONSTANT 78
+#define COLOR4 #5665F2
+
+--------------------------------------------------
+
+(resources
+  (define_directive
+    (identifier)
+    (resource_value))
+  (define_directive
+    (identifier)
+    (resource_value)))
