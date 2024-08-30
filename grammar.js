@@ -49,7 +49,7 @@ export default grammar({
     ),
 
     components: $ => seq(
-      optional($.binding),
+      repeat($.binding),
       repeat(seq(
         choice($.component, alias('?', $.any_component)),
         repeat1($.binding)),

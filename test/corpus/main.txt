@@ -75,6 +75,8 @@ Resources with a sequence of multiple bindings
 ==================================================
 a.*.b: c
 f....g: c
+*.color: blue
+**.font: mono
 
 --------------------------------------------------
 
@@ -91,6 +93,19 @@ f....g: c
     name: (components
       (component)
       (binding)
+      (binding)
+      (binding)
+      (binding)
+      (component))
+    value: (resource_value))
+  (resource
+    name: (components
+      (binding)
+      (binding)
+      (component))
+    value: (resource_value))
+  (resource
+    name: (components
       (binding)
       (binding)
       (binding)
