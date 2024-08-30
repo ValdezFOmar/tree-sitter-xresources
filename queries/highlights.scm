@@ -4,8 +4,18 @@
 
 "#define" @keyword.directive.define
 
+[
+  "#ifdef"
+  "#ifndef"
+  "#else"
+  "#endif"
+] @keyword.directive
+
 (define_directive
-  (identifier) @constant.macro)
+  (identifier) @constant)
+
+(ifdef_directive
+  condition: (identifier) @constant)
 
 (component) @variable.member
 

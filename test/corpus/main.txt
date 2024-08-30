@@ -168,3 +168,46 @@ octal: \033[31m
   (define_directive
     (identifier)
     (resource_value)))
+
+==================================================
+#ifdef directive
+==================================================
+#ifdef SOME_MACRO_DEFINED
+Hello.world: 100
+#endif
+
+#  ifndef  HELLO
+
+#  endif
+
+#ifdef VAR
+#define color #346
+#else
+#define color #389
+#endif
+
+--------------------------------------------------
+
+(resources
+  (ifdef_directive
+    condition: (identifier)
+    consequence: (body
+      (resource
+        name: (components
+          (component)
+          (binding)
+          (component))
+        value: (resource_value))))
+  (ifdef_directive
+    condition: (identifier)
+    consequence: (body))
+  (ifdef_directive
+    condition: (identifier)
+    consequence: (body
+      (define_directive
+        (identifier)
+        (resource_value)))
+    alternative: (else_directive
+      (define_directive
+        (identifier)
+        (resource_value)))))

@@ -1,15 +1,9 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
-// TODO: Implement 'ifdef' and 'ifndef' macros
-//
-// Check https://github.com/search?q=Xresources&type=repositories for some sample test files.
-// 
-// More specific an extensive configs (include license when copying):
-// https://github.com/bakkeby/dusk.resources
-
 const ANY_CHAR = /[^\x00\n]/;
 const WHITE_SPACE = /[ \t]/;
+const NEWLINE = /\n/;
 
 export default grammar({
   name: 'xresources',
@@ -17,12 +11,15 @@ export default grammar({
   extras: _ => [WHITE_SPACE],
 
   rules: {
-    resources: $ => repeat(seq(optional($._statement), /\n/)),
+    resources: $ => repeat($._line),
+
+    _line: $ => seq(optional($._statement), NEWLINE),
 
     _statement: $ => choice(
       $.comment,
       $.include_directive,
       $.define_directive,
+      $.ifdef_directive,
       $.resource,
     ),
 
@@ -30,6 +27,17 @@ export default grammar({
 
     include_directive: $ => seq(directive('include'), field('file', $.string)),
     define_directive: $ => seq(directive('define'), $.identifier, $.resource_value),
+
+    ifdef_directive: $ => seq(
+      choice(directive('ifdef'), directive('ifndef')),
+      field('condition', $.identifier),
+      NEWLINE,
+      field('consequence', alias(repeat($._line), $.body)),
+      optional(field('alternative', $.else_directive)),
+      directive('endif'),
+    ),
+
+    else_directive: $ => seq(directive('else'), NEWLINE, repeat($._line)),
 
     identifier: _ => /[a-zA-Z_][a-zA-Z0-9_]+/,
 
