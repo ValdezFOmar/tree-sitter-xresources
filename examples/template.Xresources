@@ -1,0 +1,195 @@
+! https://github.com/bakkeby/dusk.resources
+!
+! MIT/X Consortium License
+! 
+! © 2019-     Stein Bakkeby <bakkeby@gmail.com>
+! 
+! Permission is hereby granted, free of charge, to any person obtaining a
+! copy of this software and associated documentation files (the "Software"),
+! to deal in the Software without restriction, including without limitation
+! the rights to use, copy, modify, merge, publish, distribute, sublicense,
+! and/or sell copies of the Software, and to permit persons to whom the
+! Software is furnished to do so, subject to the following conditions:
+! 
+! The above copyright notice and this permission notice shall be included in
+! all copies or substantial portions of the Software.
+! 
+! THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+! IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+! FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+! THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+! LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+! FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+! DEALINGS IN THE SOFTWARE.
+
+#include "defaults.txt"
+
+! === terminal colors ===
+! Change the scope to "dusk" if you do not want the template
+! to interfere with global colors (e.g. terminals).
+#define COLOR_SCOPE *
+!#define COLOR_SCOPE dusk
+
+#ifdef COLOR0
+COLOR_SCOPE.color0: COLOR0
+COLOR_SCOPE.color1: COLOR1
+COLOR_SCOPE.color2: COLOR2
+COLOR_SCOPE.color3: COLOR3
+COLOR_SCOPE.color4: COLOR4
+COLOR_SCOPE.color5: COLOR5
+COLOR_SCOPE.color6: COLOR6
+COLOR_SCOPE.color7: COLOR7
+COLOR_SCOPE.color8: COLOR8
+COLOR_SCOPE.color9: COLOR9
+COLOR_SCOPE.color10: COLOR10
+COLOR_SCOPE.color11: COLOR11
+COLOR_SCOPE.color12: COLOR12
+COLOR_SCOPE.color13: COLOR13
+COLOR_SCOPE.color14: COLOR14
+COLOR_SCOPE.color15: COLOR15
+#endif
+
+! === general colors ===
+*.foreground: TERMINAL_FOREGROUND
+*.background: TERMINAL_BACKGROUND
+#ifdef CURSOR
+*.cursor: CURSOR
+#endif
+
+! === dusk foreground colors ===
+dusk.norm.fg.color:                   NORM_FG_COLOR
+dusk.titlenorm.fg.color:              TITLE_NORM_FG_COLOR
+dusk.titlesel.fg.color:               TITLE_SEL_FG_COLOR
+dusk.scratchnorm.fg.color:            SCRATCH_NORM_FG_COLOR
+dusk.scratchsel.fg.color:             SCRATCH_SEL_FG_COLOR
+dusk.hidnorm.fg.color:                HID_NORM_FG_COLOR
+dusk.hidsel.fg.color:                 HID_SEL_FG_COLOR
+dusk.urg.fg.color:                    URGENT_FG_COLOR
+dusk.marked.fg.color:                 MARKED_FG_COLOR
+dusk.wsnorm.fg.color:                 WS_NORM_FG_COLOR
+dusk.wsvis.fg.color:                  WS_VIS_FG_COLOR
+dusk.wssel.fg.color:                  WS_SEL_FG_COLOR
+dusk.wsocc.fg.color:                  WS_OCC_FG_COLOR
+
+#ifdef FLOAT_NORM_FG_COLOR
+dusk.norm.float.fg.color:             FLOAT_NORM_FG_COLOR
+#endif
+#ifdef FLOAT_SEL_FG_COLOR
+dusk.sel.float.fg.color:              FLOAT_SEL_FG_COLOR
+#endif
+
+! === dusk background colors ===
+dusk.norm.bg.color:                   NORM_BG_COLOR
+dusk.titlenorm.bg.color:              TITLE_NORM_BG_COLOR
+dusk.titlesel.bg.color:               TITLE_SEL_BG_COLOR
+dusk.scratchnorm.bg.color:            SCRATCH_NORM_BG_COLOR
+dusk.scratchsel.bg.color:             SCRATCH_SEL_BG_COLOR
+dusk.hidnorm.bg.color:                HID_NORM_BG_COLOR
+dusk.hidsel.bg.color:                 HID_SEL_BG_COLOR
+dusk.urg.bg.color:                    URGENT_BG_COLOR
+dusk.marked.bg.color:                 MARKED_BG_COLOR
+dusk.wsnorm.bg.color:                 WS_NORM_BG_COLOR
+dusk.wsvis.bg.color:                  WS_VIS_BG_COLOR
+dusk.wssel.bg.color:                  WS_SEL_BG_COLOR
+dusk.wsocc.bg.color:                  WS_OCC_BG_COLOR
+
+! === dusk border colors ===
+dusk.norm.border.color:               NORM_BORDER_COLOR
+dusk.titlenorm.border.color:          TITLE_NORM_BORDER_COLOR
+dusk.titlesel.border.color:           TITLE_SEL_BORDER_COLOR
+dusk.scratchnorm.border.color:        SCRATCH_NORM_BORDER_COLOR
+dusk.scratchsel.border.color:         SCRATCH_SEL_BORDER_COLOR
+dusk.urg.border.color:                URGENT_BORDER_COLOR
+dusk.marked.border.color:             MARKED_BORDER_COLOR
+
+#ifdef FLOAT_NORM_BG_COLOR
+dusk.norm.float.bg.color:             FLOAT_NORM_BG_COLOR
+#endif
+#ifdef FLOAT_SEL_BG_COLOR
+dusk.sel.float.bg.color:              FLOAT_SEL_BG_COLOR
+#endif
+
+! === dmenu colors ===
+dmenu.norm.fg.color:                  BASE_FOREGROUND
+dmenu.norm.bg.color:                  BASE_BACKGROUND
+dmenu.sel.fg.color:                   SELECTED_FOREGROUND
+dmenu.sel.bg.color:                   SELECTED_BACKGROUND
+dmenu.border.bg.color:                BORDER
+dmenu.out.fg.color:                   MARKED_FG_COLOR
+dmenu.out.bg.color:                   MARKED_BG_COLOR
+dmenu.prompt.fg.color:                TITLE_NORM_FG_COLOR
+dmenu.prompt.bg.color:                TITLE_NORM_BG_COLOR
+dmenu.adjacent.fg.color:              SELECTED_FOREGROUND
+dmenu.adjacent.bg.color:              SELECTED_BACKGROUND
+dmenu.selhl.fg.color:                 URGENT_FG_COLOR
+dmenu.selhl.bg.color:                 URGENT_BG_COLOR
+dmenu.normhl.fg.color:                MARKED_FG_COLOR
+dmenu.normhl.bg.color:                MARKED_BG_COLOR
+#ifdef WARNING_FG_COLOR
+dmenu.hp.fg.color:                    WARNING_FG_COLOR
+#endif
+#ifdef WARNING_BG_COLOR
+dmenu.hp.bg.color:                    WARNING_BG_COLOR
+#endif
+
+#ifdef FLOAT_NORM_BORDER_COLOR
+dusk.norm.float.border.color:         FLOAT_NORM_BORDER_COLOR
+#endif
+#ifdef FLOAT_SEL_BORDER_COLOR
+dusk.sel.float.border.color:          FLOAT_SEL_BORDER_COLOR
+#endif
+
+! === xmenu colors ===
+xmenu.background_color:               BASE_BACKGROUND
+xmenu.foreground_color:               BASE_FOREGROUND
+xmenu.selforeground:                  SELECTED_FOREGROUND
+xmenu.selbackground:                  SELECTED_BACKGROUND
+xmenu.border:                         BORDER
+xmenu.separator:                      BASE_FOREGROUND
+
+! === slock colors ===
+slock.background:                     BASE_BACKGROUND
+slock.locked:                         BASE_BACKGROUND
+slock.input:                          SELECTED_BACKGROUND
+slock.failed:                         URGENT_BG_COLOR
+#ifdef WARNING_BG_COLOR
+slock.capslock:                       WARNING_BG_COLOR
+#endif
+
+! === sxiv colors ===
+Sxiv.mark:                            MARKED_BG_COLOR
+Sxiv.barforeground:                   SELECTED_FOREGROUND
+Sxiv.barbackground:                   SELECTED_BACKGROUND
+
+! === nsxiv colors ===
+
+Nsxiv.mark.foreground:                MARKED_BG_COLOR
+Nsxiv.window.foreground:              BASE_FOREGROUND
+Nsxiv.window.background:              BASE_BACKGROUND
+Nsxiv.bar.foreground:                 SELECTED_FOREGROUND
+Nsxiv.bar.background:                 SELECTED_BACKGROUND
+
+! === pmenu colors ===
+pmenu.foreground:                     BASE_FOREGROUND
+pmenu.background:                     BASE_BACKGROUND
+pmenu.selbackground:                  SELECTED_BACKGROUND
+pmenu.selforeground:                  SELECTED_FOREGROUND
+pmenu.border:                         BORDER
+pmenu.separator:                      SELECTED_BACKGROUND
+
+! === dunst colors ===
+dunst.colors.low.fg:                  SELECTED_FOREGROUND
+dunst.colors.low.bg:                  SELECTED_BACKGROUND
+dunst.colors.low.frame:               BORDER
+dunst.colors.low.highlight:           MARKED_BG_COLOR
+dunst.colors.norm.fg:                 BASE_FOREGROUND
+dunst.colors.norm.bg:                 BASE_BACKGROUND
+dunst.colors.norm.frame:              BORDER
+dunst.colors.norm.highlight:          MARKED_BG_COLOR
+dunst.colors.crit.fg:                 URGENT_FG_COLOR
+dunst.colors.crit.bg:                 URGENT_BG_COLOR
+dunst.colors.crit.frame:              BORDER
+dunst.colors.crit.highlight:          MARKED_BG_COLOR
+dunst.colors.frame_color:             BORDER
+
+! vim: ft=xdefaults

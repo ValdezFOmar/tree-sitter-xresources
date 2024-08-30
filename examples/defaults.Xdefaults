@@ -1,0 +1,239 @@
+! https://github.com/bakkeby/dusk.resources
+!
+! MIT/X Consortium License
+! 
+! © 2019-     Stein Bakkeby <bakkeby@gmail.com>
+! 
+! Permission is hereby granted, free of charge, to any person obtaining a
+! copy of this software and associated documentation files (the "Software"),
+! to deal in the Software without restriction, including without limitation
+! the rights to use, copy, modify, merge, publish, distribute, sublicense,
+! and/or sell copies of the Software, and to permit persons to whom the
+! Software is furnished to do so, subject to the following conditions:
+! 
+! The above copyright notice and this permission notice shall be included in
+! all copies or substantial portions of the Software.
+! 
+! THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+! IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+! FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+! THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+! LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+! FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+! DEALINGS IN THE SOFTWARE.
+
+#ifndef NORM_FG_COLOR
+#define NORM_FG_COLOR BASE_FOREGROUND
+#endif
+#ifndef SEL_FG_COLOR
+#define SEL_FG_COLOR SELECTED_FOREGROUND
+#endif
+#ifndef TITLE_NORM_FG_COLOR
+#define TITLE_NORM_FG_COLOR BASE_FOREGROUND
+#endif
+#ifndef TITLE_SEL_FG_COLOR
+#define TITLE_SEL_FG_COLOR SELECTED_FOREGROUND
+#endif
+#ifndef WS_NORM_FG_COLOR
+#define WS_NORM_FG_COLOR BASE_FOREGROUND
+#endif
+#ifndef WS_OCC_FG_COLOR
+#define WS_OCC_FG_COLOR WS_NORM_FG_COLOR
+#endif
+#ifndef WS_VIS_FG_COLOR
+#define WS_VIS_FG_COLOR SELECTED_FOREGROUND
+#endif
+#ifndef WS_SEL_FG_COLOR
+#define WS_SEL_FG_COLOR SELECTED_FOREGROUND
+#endif
+#ifndef HID_NORM_FG_COLOR
+#define HID_NORM_FG_COLOR BASE_FOREGROUND
+#endif
+#ifndef HID_SEL_FG_COLOR
+#define HID_SEL_FG_COLOR SELECTED_FOREGROUND
+#endif
+#ifndef URGENT_FG_COLOR
+#define URGENT_FG_COLOR BASE_FOREGROUND
+#endif
+#ifndef WARNING_FG_COLOR
+#ifdef WARNING
+#define WARNING_FG_COLOR BASE_FOREGROUND
+#endif
+#endif
+#ifndef MARKED_FG_COLOR
+#define MARKED_FG_COLOR BASE_FOREGROUND
+#endif
+#ifndef SCRATCH_NORM_FG_COLOR
+#define SCRATCH_NORM_FG_COLOR BASE_FOREGROUND
+#endif
+#ifndef SCRATCH_SEL_FG_COLOR
+#define SCRATCH_SEL_FG_COLOR SELECTED_FOREGROUND
+#endif
+
+#ifndef NORM_BG_COLOR
+#define NORM_BG_COLOR BASE_BACKGROUND
+#endif
+#ifndef SEL_BG_COLOR
+#define SEL_BG_COLOR SELECTED_BACKGROUND
+#endif
+#ifndef TITLE_NORM_BG_COLOR
+#ifdef TITLENORM
+#define TITLE_NORM_BG_COLOR TITLENORM
+#else
+#define TITLE_NORM_BG_COLOR BASE_BACKGROUND
+#endif
+#endif
+#ifndef TITLE_SEL_BG_COLOR
+#ifdef TITLESEL
+#define TITLE_SEL_BG_COLOR TITLESEL
+#else
+#define TITLE_SEL_BG_COLOR SELECTED_BACKGROUND
+#endif
+#endif
+#ifndef WS_NORM_BG_COLOR
+#ifdef WSNORM
+#define WS_NORM_BG_COLOR WSNORM
+#else
+#define WS_NORM_BG_COLOR BASE_BACKGROUND
+#endif
+#endif
+#ifndef WS_OCC_BG_COLOR
+#ifdef WSOCC
+#define WS_OCC_BG_COLOR WSOCC
+#else
+#define WS_OCC_BG_COLOR WS_NORM_BG_COLOR
+#endif
+#endif
+#ifndef WS_SEL_BG_COLOR
+#ifdef WSSEL
+#define WS_SEL_BG_COLOR WSSEL
+#else
+#define WS_SEL_BG_COLOR SELECTED_BACKGROUND
+#endif
+#endif
+#ifndef WS_VIS_BG_COLOR
+#ifdef WSVIS
+#define WS_VIS_BG_COLOR WSVIS
+#else
+#define WS_VIS_BG_COLOR WS_SEL_BG_COLOR
+#endif
+#endif
+#ifndef HID_NORM_BG_COLOR
+#ifdef HIDNORM
+#define HID_NORM_BG_COLOR HIDNORM
+#else
+#define HID_NORM_BG_COLOR BASE_BACKGROUND
+#endif
+#endif
+#ifndef HID_SEL_BG_COLOR
+#ifdef HIDSEL
+#define HID_SEL_BG_COLOR HIDSEL
+#else
+#define HID_SEL_BG_COLOR SELECTED_BACKGROUND
+#endif
+#endif
+#ifndef URGENT_BG_COLOR
+#ifdef URGENT
+#define URGENT_BG_COLOR URGENT
+#else
+#define URGENT_BG_COLOR BASE_BACKGROUND
+#endif
+#endif
+#ifndef WARNING_BG_COLOR
+#ifdef WARNING
+#define WARNING_BG_COLOR WARNING
+#endif
+#endif
+#ifndef MARKED_BG_COLOR
+#ifdef MARKED
+#define MARKED_BG_COLOR MARKED
+#else
+#define MARKED_BG_COLOR BASE_BACKGROUND
+#endif
+#endif
+#ifndef SCRATCH_NORM_BG_COLOR
+#ifdef SCRATCHNORM
+#define SCRATCH_NORM_BG_COLOR SCRATCHNORM
+#else
+#define SCRATCH_NORM_BG_COLOR TITLE_NORM_BG_COLOR
+#endif
+#endif
+#ifndef SCRATCH_SEL_BG_COLOR
+#ifdef SCRATCHSEL
+#define SCRATCH_SEL_BG_COLOR SCRATCHSEL
+#else
+#define SCRATCH_SEL_BG_COLOR TITLE_SEL_BG_COLOR
+#endif
+#endif
+
+#ifndef FLOAT_NORM_BG_COLOR
+#ifdef FLOATNORM
+#define FLOAT_NORM_BG_COLOR FLOATNORM
+#endif
+#endif
+#ifndef FLOAT_SEL_BG_COLOR
+#ifdef FLOATSEL
+#define FLOAT_SEL_BG_COLOR FLOATSEL
+#endif
+#endif
+
+#ifndef FLOAT_NORM_FG_COLOR
+#ifdef FLOAT_SEL_BG_COLOR
+#define FLOAT_NORM_FG_COLOR BASE_FOREGROUND
+#endif
+#endif
+#ifndef FLOAT_SEL_FG_COLOR
+#ifdef FLOAT_NORM_BG_COLOR
+#define FLOAT_SEL_FG_COLOR SELECTED_FOREGROUND
+#endif
+#endif
+
+#ifndef NORM_BORDER_COLOR
+#define NORM_BORDER_COLOR BORDER
+#endif
+#ifndef SEL_BORDER_COLOR
+#define SEL_BORDER_COLOR SEL_BG_COLOR
+#endif
+#ifndef TITLE_NORM_BORDER_COLOR
+#define TITLE_NORM_BORDER_COLOR TITLE_NORM_BG_COLOR
+#endif
+#ifndef TITLE_SEL_BORDER_COLOR
+#define TITLE_SEL_BORDER_COLOR TITLE_SEL_BG_COLOR
+#endif
+#ifndef SCRATCH_NORM_BORDER_COLOR
+#define SCRATCH_NORM_BORDER_COLOR SCRATCH_NORM_BG_COLOR
+#endif
+#ifndef SCRATCH_SEL_BORDER_COLOR
+#define SCRATCH_SEL_BORDER_COLOR SCRATCH_SEL_BG_COLOR
+#endif
+#ifndef URGENT_BORDER_COLOR
+#define URGENT_BORDER_COLOR URGENT_BG_COLOR
+#endif
+#ifndef MARKED_BORDER_COLOR
+#define MARKED_BORDER_COLOR MARKED_BG_COLOR
+#endif
+
+#ifdef FLOAT_NORM_BG_COLOR
+#ifndef FLOAT_NORM_BORDER_COLOR
+#define FLOAT_NORM_BORDER_COLOR FLOAT_NORM_BG_COLOR
+#endif
+#endif
+
+#ifdef FLOAT_SEL_BG_COLOR
+#ifndef FLOAT_SEL_BORDER_COLOR
+#define FLOAT_SEL_BORDER_COLOR FLOAT_SEL_BG_COLOR
+#endif
+#endif
+
+#ifndef BORDER
+#define BORDER NORM_BG_COLOR
+#endif
+
+#ifndef TERMINAL_FOREGROUND
+#define TERMINAL_FOREGROUND BASE_FOREGROUND
+#endif
+#ifndef TERMINAL_BACKGROUND
+#define TERMINAL_BACKGROUND BASE_BACKGROUND
+#endif
+
+! vim: ft=xdefaults
