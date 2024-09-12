@@ -78,5 +78,5 @@ export default grammar({
  * @returns {Rule} Preprocessor rule
  */
 function directive(name) {
-  return alias(token.immediate(seq('#', repeat(WHITE_SPACE), name)), '#' + name);
+  return alias(token(seq('#', repeat(WHITE_SPACE), name)), '#' + name);
 }

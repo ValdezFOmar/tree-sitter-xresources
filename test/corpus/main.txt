@@ -227,3 +227,30 @@ Hello.world: 100
       (define_directive
         name: (identifier)
         value: (expansion)))))
+
+==================================================
+Directive with whitespace
+==================================================
+# define hello world
+#ifdef hello
+    #define hello person
+#   else
+    # define hello world
+#	endif
+
+--------------------------------------------------
+
+(resources
+  (define_directive
+    name: (identifier)
+    value: (expansion))
+  (ifdef_directive
+    condition: (identifier)
+    consequence: (body
+      (define_directive
+        name: (identifier)
+        value: (expansion)))
+    alternative: (else_directive
+      (define_directive
+        name: (identifier)
+        value: (expansion)))))

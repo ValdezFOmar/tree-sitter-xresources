@@ -79,7 +79,7 @@
         {
           "type": "ALIAS",
           "content": {
-            "type": "IMMEDIATE_TOKEN",
+            "type": "TOKEN",
             "content": {
               "type": "SEQ",
               "members": [
@@ -120,7 +120,7 @@
         {
           "type": "ALIAS",
           "content": {
-            "type": "IMMEDIATE_TOKEN",
+            "type": "TOKEN",
             "content": {
               "type": "SEQ",
               "members": [
@@ -212,7 +212,7 @@
             {
               "type": "ALIAS",
               "content": {
-                "type": "IMMEDIATE_TOKEN",
+                "type": "TOKEN",
                 "content": {
                   "type": "SEQ",
                   "members": [
@@ -240,7 +240,7 @@
             {
               "type": "ALIAS",
               "content": {
-                "type": "IMMEDIATE_TOKEN",
+                "type": "TOKEN",
                 "content": {
                   "type": "SEQ",
                   "members": [
@@ -314,7 +314,7 @@
         {
           "type": "ALIAS",
           "content": {
-            "type": "IMMEDIATE_TOKEN",
+            "type": "TOKEN",
             "content": {
               "type": "SEQ",
               "members": [
@@ -347,7 +347,7 @@
         {
           "type": "ALIAS",
           "content": {
-            "type": "IMMEDIATE_TOKEN",
+            "type": "TOKEN",
             "content": {
               "type": "SEQ",
               "members": [
