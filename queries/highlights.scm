@@ -12,7 +12,8 @@
 ] @keyword.directive
 
 (define_directive
-  (identifier) @constant)
+  name: (identifier) @constant
+  value: (_)? @string)
 
 (ifdef_directive
   condition: (identifier) @constant)

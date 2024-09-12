@@ -146,12 +146,60 @@
           "value": "#define"
         },
         {
-          "type": "SYMBOL",
-          "name": "identifier"
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "resource_value"
+          "type": "REPEAT",
+          "content": {
+            "type": "PATTERN",
+            "value": "[ \\t]"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "value",
+              "content": {
+                "type": "SYMBOL",
+                "name": "expansion"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "expansion": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "\\S"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "PATTERN",
+                "value": "."
+              },
+              {
+                "type": "PATTERN",
+                "value": "\\\\\\n"
+              }
+            ]
+          }
         }
       ]
     },

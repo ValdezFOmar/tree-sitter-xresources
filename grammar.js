@@ -26,7 +26,14 @@ export default grammar({
     comment: _ => token.immediate(seq("!", repeat(ANY_CHAR))),
 
     include_directive: $ => seq(directive('include'), field('file', $.string)),
-    define_directive: $ => seq(directive('define'), $.identifier, $.resource_value),
+
+    define_directive: $ => seq(
+      directive('define'),
+      field('name', $.identifier),
+      repeat(WHITE_SPACE),
+      optional(field('value', $.expansion))
+    ),
+    expansion: _ => seq(/\S/, repeat(choice(/./, /\\\n/))),
 
     ifdef_directive: $ => seq(
       choice(directive('ifdef'), directive('ifndef')),

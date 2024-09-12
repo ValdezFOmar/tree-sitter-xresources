@@ -6,6 +6,7 @@ Comments
 !bar   
 
 --------------------------------------------------
+
 (resources
   (comment)
   (comment)
@@ -178,11 +179,11 @@ octal: \033[31m
 
 (resources
   (define_directive
-    (identifier)
-    (resource_value))
+    name: (identifier)
+    value: (expansion))
   (define_directive
-    (identifier)
-    (resource_value)))
+    name: (identifier)
+    value: (expansion)))
 
 ==================================================
 #ifdef directive
@@ -220,9 +221,9 @@ Hello.world: 100
     condition: (identifier)
     consequence: (body
       (define_directive
-        (identifier)
-        (resource_value)))
+        name: (identifier)
+        value: (expansion)))
     alternative: (else_directive
       (define_directive
-        (identifier)
-        (resource_value)))))
+        name: (identifier)
+        value: (expansion)))))
