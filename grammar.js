@@ -8,7 +8,7 @@ const NEWLINE = /\n/;
 export default grammar({
   name: 'xresources',
 
-  extras: _ => [WHITE_SPACE],
+  extras: $ => [WHITE_SPACE, $.preprocessor_comment],
 
   rules: {
     resources: $ => repeat($._line),
@@ -23,7 +23,14 @@ export default grammar({
       $.resource,
     ),
 
-    comment: _ => token.immediate(seq("!", repeat(ANY_CHAR))),
+    comment: _ => token.immediate(seq('!', repeat(ANY_CHAR))),
+
+    // C style comments handled by the C preprocessor,
+    // rule definition taken from tree-sitter-c
+    preprocessor_comment: _ => token(choice(
+      seq('//', /(\\+(.|\r?\n)|[^\\\n])*/),
+      seq('/*', /[^*]*\*+([^/*][^*]*\*+)*/, '/'),
+    )),
 
     include_directive: $ => seq(directive('include'), field('file', $.string)),
 

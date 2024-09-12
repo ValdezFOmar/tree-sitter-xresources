@@ -1,6 +1,13 @@
 #include "./foo/bar"
 
-! This is another comment
+! native comment
+
+// C style comments
+
+/*
+ * Multiline comments
+ */
+
 Xcursor.theme: Qogir-cursors
 
 Xcolor.description: This is a long \

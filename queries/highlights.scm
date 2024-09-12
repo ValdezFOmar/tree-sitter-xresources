@@ -1,4 +1,7 @@
-(comment) @comment
+[
+  (comment)
+  (preprocessor_comment)
+] @comment
 
 "#include" @keyword.import
 

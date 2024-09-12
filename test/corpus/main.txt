@@ -5,12 +5,20 @@ Comments
 ! foo
 !bar   
 
+// C style comments
+
+/*
+ * Multiline comments
+ */
+
 --------------------------------------------------
 
 (resources
   (comment)
   (comment)
-  (comment))
+  (comment)
+  (preprocessor_comment)
+  (preprocessor_comment))
 
 ==================================================
 Resources with dot binding

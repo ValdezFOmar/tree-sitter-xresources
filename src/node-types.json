@@ -320,6 +320,10 @@
     "named": true
   },
   {
+    "type": "preprocessor_comment",
+    "named": true
+  },
+  {
     "type": "string_content",
     "named": true
   }
