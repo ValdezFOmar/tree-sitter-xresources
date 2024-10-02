@@ -65,13 +65,14 @@ export default grammar({
     components: $ => seq(
       repeat($.binding),
       repeat(seq(
-        choice($.component, alias('?', $.any_component)),
+        choice($.component, $.any_component),
         repeat1($.binding)),
       ),
       $.component,
     ),
     binding: _ => choice('.', '*'),
     component: _ => /[a-zA-Z0-9_-]+/,
+    any_component: _ => '?',
 
     escape_sequence: _ => token(seq('\\', choice('n', '\\', '\t', '\n', ' ', /[0-7]{3}/))),
     resource_value: $ => repeat1(choice(ANY_CHAR, $.escape_sequence)),

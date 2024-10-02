@@ -482,13 +482,8 @@
                     "name": "component"
                   },
                   {
-                    "type": "ALIAS",
-                    "content": {
-                      "type": "STRING",
-                      "value": "?"
-                    },
-                    "named": true,
-                    "value": "any_component"
+                    "type": "SYMBOL",
+                    "name": "any_component"
                   }
                 ]
               },
@@ -524,6 +519,10 @@
     "component": {
       "type": "PATTERN",
       "value": "[a-zA-Z0-9_-]+"
+    },
+    "any_component": {
+      "type": "STRING",
+      "value": "?"
     },
     "escape_sequence": {
       "type": "TOKEN",
