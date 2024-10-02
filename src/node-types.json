@@ -116,11 +116,6 @@
     }
   },
   {
-    "type": "expansion",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "ifdef_directive",
     "named": true,
     "fields": {
@@ -314,6 +309,10 @@
   },
   {
     "type": "escape_sequence",
+    "named": true
+  },
+  {
+    "type": "expansion",
     "named": true
   },
   {

@@ -32,29 +32,6 @@ export default grammar({
       seq('/*', /[^*]*\*+([^/*][^*]*\*+)*/, '/'),
     )),
 
-    include_directive: $ => seq(directive('include'), field('file', $.string)),
-
-    define_directive: $ => seq(
-      directive('define'),
-      field('name', $.identifier),
-      repeat(WHITE_SPACE),
-      optional(field('value', $.expansion))
-    ),
-    expansion: _ => seq(/\S/, repeat(choice(/./, /\\\n/))),
-
-    ifdef_directive: $ => seq(
-      choice(directive('ifdef'), directive('ifndef')),
-      field('condition', $.identifier),
-      NEWLINE,
-      field('consequence', alias(repeat($._line), $.body)),
-      optional(field('alternative', $.else_directive)),
-      directive('endif'),
-    ),
-
-    else_directive: $ => seq(directive('else'), NEWLINE, repeat($._line)),
-
-    identifier: _ => /[a-zA-Z_][a-zA-Z0-9_]+/,
-
     resource: $ => seq(
       field('name', $.components),
       ':',
@@ -77,6 +54,30 @@ export default grammar({
     escape_sequence: _ => token(seq('\\', choice('n', '\\', '\t', '\n', ' ', /[0-7]{3}/))),
     resource_value: $ => repeat1(choice(ANY_CHAR, $.escape_sequence)),
     string: $ => seq('"', alias(/[^\n"]*/, $.string_content), '"'),
+
+    // Preprocessor directives
+    include_directive: $ => seq(directive('include'), field('file', $.string)),
+
+    define_directive: $ => seq(
+      directive('define'),
+      field('name', $.identifier),
+      repeat(WHITE_SPACE),
+      optional(field('value', $.expansion))
+    ),
+    expansion: _ => token(seq(/\S/, repeat(choice(/./, /\\\n/)))),
+
+    ifdef_directive: $ => seq(
+      choice(directive('ifdef'), directive('ifndef')),
+      field('condition', $.identifier),
+      NEWLINE,
+      field('consequence', alias(repeat($._line), $.body)),
+      optional(field('alternative', $.else_directive)),
+      directive('endif'),
+    ),
+
+    else_directive: $ => seq(directive('else'), NEWLINE, repeat($._line)),
+
+    identifier: _ => /[a-zA-Z_][a-zA-Z0-9_]+/,
   },
 });
 
