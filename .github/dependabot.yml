@@ -4,7 +4,7 @@ updates:
     directory: /
     schedule:
       interval: weekly
-      day: sunday
+      day: saturday
     commit-message:
       prefix: ci
     labels:
@@ -39,3 +39,44 @@ updates:
     groups:
       cargo:
         patterns: ["*"]
+
+  # NOTE: uncomment the ecosystems you want to keep up-to-date
+
+  # - package-ecosystem: pip
+  #   directory: /
+  #   schedule:
+  #     interval: weekly
+  #     day: sunday
+  #   commit-message:
+  #     prefix: build(deps)
+  #   labels:
+  #     - dependencies
+  #   groups:
+  #     pip:
+  #       patterns: ["*"]
+
+  # - package-ecosystem: swift
+  #   directory: /
+  #   schedule:
+  #     interval: weekly
+  #     day: sunday
+  #   commit-message:
+  #     prefix: build(deps)
+  #   labels:
+  #     - dependencies
+  #   groups:
+  #     swift:
+  #       patterns: ["*"]
+
+  # - package-ecosystem: gomod
+  #   directory: /
+  #   schedule:
+  #     interval: weekly
+  #     day: sunday
+  #   commit-message:
+  #     prefix: build(deps)
+  #   labels:
+  #     - dependencies
+  #   groups:
+  #     go:
+  #       patterns: ["*"]

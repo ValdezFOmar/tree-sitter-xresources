@@ -2,7 +2,6 @@ parser/
 queries/xresources/
 
 # Rust artifacts
-Cargo.lock
 target/
 
 # Node artifacts
@@ -40,3 +39,8 @@ dist/
 *.wasm
 *.obj
 *.o
+
+# Archives
+*.tar.gz
+*.tgz
+*.zip
