@@ -5,7 +5,10 @@
 
 "#include" @keyword.import
 
-"#define" @keyword.directive.define
+[
+  "#define"
+  "#undef"
+] @keyword.directive.define
 
 [
   "#ifdef"
@@ -17,6 +20,9 @@
 (define_directive
   name: (identifier) @constant
   value: (_)? @string)
+
+(undef_directive
+  name: (identifier) @constant)
 
 (ifdef_directive
   condition: (identifier) @constant)

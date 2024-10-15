@@ -31,6 +31,10 @@
         {
           "type": "resource",
           "named": true
+        },
+        {
+          "type": "undef_directive",
+          "named": true
         }
       ]
     }
@@ -110,6 +114,10 @@
         },
         {
           "type": "resource",
+          "named": true
+        },
+        {
+          "type": "undef_directive",
           "named": true
         }
       ]
@@ -236,6 +244,10 @@
         {
           "type": "resource",
           "named": true
+        },
+        {
+          "type": "undef_directive",
+          "named": true
         }
       ]
     }
@@ -253,6 +265,22 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "undef_directive",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -281,6 +309,10 @@
   },
   {
     "type": "#include",
+    "named": false
+  },
+  {
+    "type": "#undef",
     "named": false
   },
   {
