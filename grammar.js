@@ -17,10 +17,11 @@ export default grammar({
 
     _statement: $ => choice(
       $.comment,
-      $.include_directive,
       $.define_directive,
       $.ifdef_directive,
+      $.include_directive,
       $.resource,
+      $.undef_directive,
     ),
 
     comment: _ => token.immediate(seq('!', repeat(ANY_CHAR))),
@@ -65,6 +66,8 @@ export default grammar({
       optional(field('value', $.expansion))
     ),
     expansion: _ => token(seq(/\S/, repeat(choice(/./, /\\\n/)))),
+
+    undef_directive: $ => seq(directive('undef'), field('name', $.identifier)),
 
     ifdef_directive: $ => seq(
       choice(directive('ifdef'), directive('ifndef')),

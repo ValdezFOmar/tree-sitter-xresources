@@ -194,6 +194,20 @@ octal: \033[31m
     value: (expansion)))
 
 ==================================================
+#undef directive
+==================================================
+#undef SOME_CONSTANT
+#undef COLOR4
+
+--------------------------------------------------
+
+(resources
+  (undef_directive
+    name: (identifier))
+  (undef_directive
+    name: (identifier)))
+
+==================================================
 #ifdef directive
 ==================================================
 #ifdef SOME_MACRO_DEFINED

@@ -1,5 +1,8 @@
 #include "./foo/bar"
 
+#define USERNAME bones
+#undef USERNAME
+
 ! native comment
 
 // C style comments
