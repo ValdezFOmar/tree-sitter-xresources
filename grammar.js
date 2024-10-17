@@ -4,6 +4,7 @@
 const ANY_CHAR = /[^\x00\n]/;
 const WHITE_SPACE = /[ \t]/;
 const NEWLINE = /\n/;
+const C_IDENTIFIER = /[a-zA-Z_]\w*/;
 
 export default grammar({
   name: 'xresources',
@@ -23,6 +24,7 @@ export default grammar({
       $.ifdef_directive,
       $.include_directive,
       $.resource,
+      $.simple_directive,
       $.undef_directive,
     ),
 
@@ -119,7 +121,14 @@ export default grammar({
 
     else_directive: $ => seq(directive('else'), NEWLINE, repeat($._line)),
 
-    identifier: _ => /[a-zA-Z_][a-zA-Z0-9_]*/,
+    simple_directive: $ => seq(
+      field('name', $.directive),
+      field('value', optional($.expansion)),
+    ),
+
+    directive: _ => token(seq('#', repeat(WHITE_SPACE), C_IDENTIFIER)),
+
+    identifier: _ => C_IDENTIFIER,
   },
 });
 

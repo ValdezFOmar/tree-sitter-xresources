@@ -10,6 +10,9 @@
 #define hello4(X, ...)  Hello __VA_ARGS__, I am X
 #define hello5(...) Hello __VA_ARGS__
 
+#hello world
+#warning "Hello"
+
 ! native comment
 
 // C style comments
