@@ -178,10 +178,12 @@ octal: \033[31m
       (string_content))))
 
 ==================================================
-#define directive
+#define directive (constant)
 ==================================================
 #define SOME_CONSTANT 78
 #define COLOR4 #5665F2
+#define EMPTY
+#define EMPTY_SPACE   
 
 --------------------------------------------------
 
@@ -191,6 +193,50 @@ octal: \033[31m
     value: (expansion))
   (define_directive
     name: (identifier)
+    value: (expansion))
+  (define_directive
+    name: (identifier))
+  (define_directive
+    name: (identifier)))
+
+==================================================
+#define directive (function)
+==================================================
+#define empty()   
+#define hello1()  Hello
+#define hello2(one)
+#define hello3(one, two) ((one) + (two))
+#define hello4(X, ...)  Hello __VA_ARGS__, I am X
+#define hello5(...) Hello __VA_ARGS__
+
+--------------------------------------------------
+
+(resources
+  (define_function_directive
+    name: (identifier)
+    parameters: (parameters))
+  (define_function_directive
+    name: (identifier)
+    parameters: (parameters)
+    value: (expansion))
+  (define_function_directive
+    name: (identifier)
+    parameters: (parameters
+      (identifier)))
+  (define_function_directive
+    name: (identifier)
+    parameters: (parameters
+      (identifier)
+      (identifier))
+    value: (expansion))
+  (define_function_directive
+    name: (identifier)
+    parameters: (parameters
+      (identifier))
+    value: (expansion))
+  (define_function_directive
+    name: (identifier)
+    parameters: (parameters)
     value: (expansion)))
 
 ==================================================

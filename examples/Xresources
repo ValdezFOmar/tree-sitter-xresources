@@ -3,6 +3,13 @@
 #define USERNAME bones
 #undef USERNAME
 
+#define empty() One /* hello */
+#define hello1()  Hello
+#define hello2(one)
+#define hello3(one, two) ((one) + (two))
+#define hello4(X, ...)  Hello __VA_ARGS__, I am X
+#define hello5(...) Hello __VA_ARGS__
+
 ! native comment
 
 // C style comments

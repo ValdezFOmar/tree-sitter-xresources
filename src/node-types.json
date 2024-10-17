@@ -21,6 +21,10 @@
           "named": true
         },
         {
+          "type": "define_function_directive",
+          "named": true
+        },
+        {
           "type": "ifdef_directive",
           "named": true
         },
@@ -89,6 +93,42 @@
     }
   },
   {
+    "type": "define_function_directive",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "parameters": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "parameters",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "expansion",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "else_directive",
     "named": true,
     "fields": {},
@@ -102,6 +142,10 @@
         },
         {
           "type": "define_directive",
+          "named": true
+        },
+        {
+          "type": "define_function_directive",
           "named": true
         },
         {
@@ -176,6 +220,21 @@
     }
   },
   {
+    "type": "parameters",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "resource",
     "named": true,
     "fields": {
@@ -231,6 +290,10 @@
         },
         {
           "type": "define_directive",
+          "named": true
+        },
+        {
+          "type": "define_function_directive",
           "named": true
         },
         {
@@ -316,11 +379,27 @@
     "named": false
   },
   {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
     "type": "*",
     "named": false
   },
   {
+    "type": ",",
+    "named": false
+  },
+  {
     "type": ".",
+    "named": false
+  },
+  {
+    "type": "...",
     "named": false
   },
   {
