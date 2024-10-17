@@ -254,7 +254,40 @@ octal: \033[31m
     name: (identifier)))
 
 ==================================================
-#ifdef directive
+#if and #elif directive
+==================================================
+#if 0
+  *background: #43
+#elif 10
+  // No resouce
+#else
+  #ifdef color
+    // nested
+  #endif
+#endif
+
+--------------------------------------------------
+
+(resources
+  (if_directive
+    condition: (expansion)
+    consequence: (body
+      (resource
+        name: (components
+          (binding)
+          (component))
+        value: (resource_value)))
+    alternative: (elif_directive
+      condition: (expansion)
+      (preprocessor_comment))
+    alternative: (else_directive
+      (ifdef_directive
+        condition: (identifier)
+        (preprocessor_comment)
+        consequence: (body)))))
+
+==================================================
+#ifdef, #ifndef, #elifdef and #elifndef directive
 ==================================================
 #ifdef SOME_MACRO_DEFINED
 Hello.world: 100
