@@ -19,6 +19,7 @@ export default grammar({
       $.comment,
       $.define_directive,
       $.define_function_directive,
+      $.if_directive,
       $.ifdef_directive,
       $.include_directive,
       $.resource,
@@ -83,14 +84,31 @@ export default grammar({
 
     undef_directive: $ => seq(directive('undef'), field('name', $.identifier)),
 
+    if_directive: $ => seq(
+      directive('if'),
+      field('condition', $.expansion),
+      NEWLINE,
+      $._if_directive_body,
+    ),
+
     ifdef_directive: $ => seq(
       choice(directive('ifdef'), directive('ifndef')),
       field('condition', $.identifier),
       NEWLINE,
+      $._if_directive_body,
+    ),
+
+    _if_directive_body: $ => seq(
       field('consequence', alias(repeat($._line), $.body)),
-      repeat(field('alternative', $.elifdef_directive)),
+      repeat(field('alternative', choice($.elif_directive, $.elifdef_directive))),
       optional(field('alternative', $.else_directive)),
       directive('endif'),
+    ),
+
+    elif_directive: $ => seq(
+      directive('elif'),
+      field('condition', $.expansion),
+      repeat($._line),
     ),
 
     elifdef_directive: $ => seq(

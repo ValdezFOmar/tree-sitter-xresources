@@ -11,8 +11,10 @@
 ] @keyword.directive.define
 
 [
+  "#if"
   "#ifdef"
   "#ifndef"
+  "#elif"
   "#elifdef"
   "#elifndef"
   "#else"

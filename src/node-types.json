@@ -25,6 +25,10 @@
           "named": true
         },
         {
+          "type": "if_directive",
+          "named": true
+        },
+        {
           "type": "ifdef_directive",
           "named": true
         },
@@ -129,6 +133,60 @@
     }
   },
   {
+    "type": "elif_directive",
+    "named": true,
+    "fields": {
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "expansion",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "define_directive",
+          "named": true
+        },
+        {
+          "type": "define_function_directive",
+          "named": true
+        },
+        {
+          "type": "if_directive",
+          "named": true
+        },
+        {
+          "type": "ifdef_directive",
+          "named": true
+        },
+        {
+          "type": "include_directive",
+          "named": true
+        },
+        {
+          "type": "resource",
+          "named": true
+        },
+        {
+          "type": "undef_directive",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "elifdef_directive",
     "named": true,
     "fields": {
@@ -157,6 +215,10 @@
         },
         {
           "type": "define_function_directive",
+          "named": true
+        },
+        {
+          "type": "if_directive",
           "named": true
         },
         {
@@ -199,6 +261,10 @@
           "named": true
         },
         {
+          "type": "if_directive",
+          "named": true
+        },
+        {
           "type": "ifdef_directive",
           "named": true
         },
@@ -218,6 +284,50 @@
     }
   },
   {
+    "type": "if_directive",
+    "named": true,
+    "fields": {
+      "alternative": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "elif_directive",
+            "named": true
+          },
+          {
+            "type": "elifdef_directive",
+            "named": true
+          },
+          {
+            "type": "else_directive",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "expansion",
+            "named": true
+          }
+        ]
+      },
+      "consequence": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "body",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "ifdef_directive",
     "named": true,
     "fields": {
@@ -225,6 +335,10 @@
         "multiple": true,
         "required": false,
         "types": [
+          {
+            "type": "elif_directive",
+            "named": true
+          },
           {
             "type": "elifdef_directive",
             "named": true
@@ -351,6 +465,10 @@
           "named": true
         },
         {
+          "type": "if_directive",
+          "named": true
+        },
+        {
           "type": "ifdef_directive",
           "named": true
         },
@@ -409,6 +527,10 @@
     "named": false
   },
   {
+    "type": "#elif",
+    "named": false
+  },
+  {
     "type": "#elifdef",
     "named": false
   },
@@ -422,6 +544,10 @@
   },
   {
     "type": "#endif",
+    "named": false
+  },
+  {
+    "type": "#if",
     "named": false
   },
   {

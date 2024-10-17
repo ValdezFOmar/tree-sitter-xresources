@@ -47,6 +47,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "if_directive"
+        },
+        {
+          "type": "SYMBOL",
           "name": "ifdef_directive"
         },
         {
@@ -578,6 +582,55 @@
         }
       ]
     },
+    "if_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "TOKEN",
+            "content": {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "#"
+                },
+                {
+                  "type": "REPEAT",
+                  "content": {
+                    "type": "PATTERN",
+                    "value": "[ \\t]"
+                  }
+                },
+                {
+                  "type": "STRING",
+                  "value": "if"
+                }
+              ]
+            }
+          },
+          "named": false,
+          "value": "#if"
+        },
+        {
+          "type": "FIELD",
+          "name": "condition",
+          "content": {
+            "type": "SYMBOL",
+            "name": "expansion"
+          }
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\n"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_if_directive_body"
+        }
+      ]
+    },
     "ifdef_directive": {
       "type": "SEQ",
       "members": [
@@ -655,6 +708,15 @@
           "value": "\\n"
         },
         {
+          "type": "SYMBOL",
+          "name": "_if_directive_body"
+        }
+      ]
+    },
+    "_if_directive_body": {
+      "type": "SEQ",
+      "members": [
+        {
           "type": "FIELD",
           "name": "consequence",
           "content": {
@@ -676,8 +738,17 @@
             "type": "FIELD",
             "name": "alternative",
             "content": {
-              "type": "SYMBOL",
-              "name": "elifdef_directive"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "elif_directive"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "elifdef_directive"
+                }
+              ]
             }
           }
         },
@@ -724,6 +795,54 @@
           },
           "named": false,
           "value": "#endif"
+        }
+      ]
+    },
+    "elif_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "TOKEN",
+            "content": {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "#"
+                },
+                {
+                  "type": "REPEAT",
+                  "content": {
+                    "type": "PATTERN",
+                    "value": "[ \\t]"
+                  }
+                },
+                {
+                  "type": "STRING",
+                  "value": "elif"
+                }
+              ]
+            }
+          },
+          "named": false,
+          "value": "#elif"
+        },
+        {
+          "type": "FIELD",
+          "name": "condition",
+          "content": {
+            "type": "SYMBOL",
+            "name": "expansion"
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_line"
+          }
         }
       ]
     },
