@@ -18,6 +18,7 @@ export default grammar({
     _statement: $ => choice(
       $.comment,
       $.define_directive,
+      $.define_function_directive,
       $.ifdef_directive,
       $.include_directive,
       $.resource,
@@ -62,10 +63,23 @@ export default grammar({
     define_directive: $ => seq(
       directive('define'),
       field('name', $.identifier),
-      repeat(WHITE_SPACE),
-      optional(field('value', $.expansion))
+      field('value', optional($.expansion)),
     ),
-    expansion: _ => token(seq(/\S/, repeat(choice(/./, /\\\n/)))),
+
+    define_function_directive: $ => seq(
+      directive('define'),
+      field('name', $.identifier),
+      field('parameters', $.parameters),
+      field('value', optional($.expansion)),
+    ),
+
+    parameters: $ => seq(
+      token.immediate('('),
+      optional(sep1(choice($.identifier, '...'), ',')),
+      ')',
+    ),
+
+    expansion: _ => token(prec(-1, /\S([^/\n]|\/[^*]|\\\r?\n)*/)),
 
     undef_directive: $ => seq(directive('undef'), field('name', $.identifier)),
 
@@ -80,7 +94,7 @@ export default grammar({
 
     else_directive: $ => seq(directive('else'), NEWLINE, repeat($._line)),
 
-    identifier: _ => /[a-zA-Z_][a-zA-Z0-9_]+/,
+    identifier: _ => /[a-zA-Z_][a-zA-Z0-9_]*/,
   },
 });
 
@@ -91,4 +105,15 @@ export default grammar({
  */
 function directive(name) {
   return alias(token(seq('#', repeat(WHITE_SPACE), name)), '#' + name);
+}
+
+/**
+ * `rule` one or more times separated by `separator`.
+ *
+ * @param {Rule} rule
+ * @param {String} separator
+ * @returns {Rule}
+ */
+function sep1(rule, separator) {
+  return seq(rule, repeat(seq(separator, rule)));
 }

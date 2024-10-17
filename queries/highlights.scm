@@ -21,6 +21,15 @@
   name: (identifier) @constant
   value: (_)? @string)
 
+(define_function_directive
+  name: (identifier) @function.macro
+  value: (_)? @string)
+
+(parameters
+  (identifier) @variable.parameter)
+
+"..." @variable.parameter.builtin
+
 (undef_directive
   name: (identifier) @constant)
 
@@ -40,6 +49,8 @@
   (resource_value)
 ] @string
 
+(escape_sequence) @string.escape
+
 [
   "*"
   (any_component)
@@ -47,7 +58,11 @@
 
 [
   "."
+  ","
   ":"
 ] @punctuation.delimiter
 
-(escape_sequence) @string.escape
+[
+  "("
+  ")"
+] @punctuation.bracket
