@@ -88,8 +88,15 @@ export default grammar({
       field('condition', $.identifier),
       NEWLINE,
       field('consequence', alias(repeat($._line), $.body)),
+      repeat(field('alternative', $.elifdef_directive)),
       optional(field('alternative', $.else_directive)),
       directive('endif'),
+    ),
+
+    elifdef_directive: $ => seq(
+      choice(directive('elifdef'), directive('elifndef')),
+      field('condition', $.identifier),
+      repeat($._line),
     ),
 
     else_directive: $ => seq(directive('else'), NEWLINE, repeat($._line)),
