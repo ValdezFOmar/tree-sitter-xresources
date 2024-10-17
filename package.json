@@ -2,9 +2,12 @@
   "name": "tree-sitter-xresources",
   "version": "0.0.1",
   "description": "Xresources grammar for tree-sitter",
-  "repository": "github:ValdezFOmar/tree-sitter-xresources",
-  "author": "Omar Valdez <omarantoniovaldezf2@gmail.com>",
+  "repository": "github:tree-sitter/tree-sitter-xresources",
   "license": "MIT",
+  "author": {
+    "name": "Omar Valdez",
+    "email": "omarantoniovaldezf2@gmail.com"
+  },
   "main": "bindings/node",
   "types": "bindings/node",
   "type": "module",
@@ -29,7 +32,6 @@
   },
   "devDependencies": {
     "prebuildify": "^6.0.1",
-    "tree-sitter": "^0.21.1",
     "tree-sitter-cli": "^0.24.3"
   },
   "peerDependencies": {
