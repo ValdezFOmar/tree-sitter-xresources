@@ -19,15 +19,14 @@
   "#elifndef"
   "#else"
   "#endif"
+  (directive)
 ] @keyword.directive
 
 (define_directive
-  name: (identifier) @constant
-  value: (_)? @string)
+  name: (identifier) @constant)
 
 (define_function_directive
-  name: (identifier) @function.macro
-  value: (_)? @string)
+  name: (identifier) @function.macro)
 
 (parameters
   (identifier) @variable.parameter)
@@ -39,6 +38,8 @@
 
 (ifdef_directive
   condition: (identifier) @constant)
+
+(expansion) @markup.raw
 
 (component) @variable.member
 

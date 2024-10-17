@@ -344,6 +344,25 @@ Hello.world: 100
         value: (expansion)))))
 
 ==================================================
+Simple directive
+==================================================
+#warning "Hello"
+#unsupported This is a simple macro
+#empty
+
+--------------------------------------------------
+
+(resources
+  (simple_directive
+    name: (directive)
+    value: (expansion))
+  (simple_directive
+    name: (directive)
+    value: (expansion))
+  (simple_directive
+    name: (directive)))
+
+==================================================
 Directive with whitespace
 ==================================================
 # define hello world

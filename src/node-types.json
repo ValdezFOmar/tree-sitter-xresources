@@ -41,6 +41,10 @@
           "named": true
         },
         {
+          "type": "simple_directive",
+          "named": true
+        },
+        {
           "type": "undef_directive",
           "named": true
         }
@@ -180,6 +184,10 @@
           "named": true
         },
         {
+          "type": "simple_directive",
+          "named": true
+        },
+        {
           "type": "undef_directive",
           "named": true
         }
@@ -234,6 +242,10 @@
           "named": true
         },
         {
+          "type": "simple_directive",
+          "named": true
+        },
+        {
           "type": "undef_directive",
           "named": true
         }
@@ -274,6 +286,10 @@
         },
         {
           "type": "resource",
+          "named": true
+        },
+        {
+          "type": "simple_directive",
           "named": true
         },
         {
@@ -481,10 +497,40 @@
           "named": true
         },
         {
+          "type": "simple_directive",
+          "named": true
+        },
+        {
           "type": "undef_directive",
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "simple_directive",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "directive",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "expansion",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -604,6 +650,10 @@
   },
   {
     "type": "component",
+    "named": true
+  },
+  {
+    "type": "directive",
     "named": true
   },
   {
