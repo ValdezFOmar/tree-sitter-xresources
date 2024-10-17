@@ -264,10 +264,14 @@ Hello.world: 100
 
 #  endif
 
-#ifdef VAR
-#define color #346
+#ifdef VAR_1
+  #define color #346
+#elifdef VAR_2
+  #define color #784
+#elifndef VAR_3
+  #define color #F59
 #else
-#define color #389
+  #define color #389
 #endif
 
 --------------------------------------------------
@@ -288,6 +292,16 @@ Hello.world: 100
   (ifdef_directive
     condition: (identifier)
     consequence: (body
+      (define_directive
+        name: (identifier)
+        value: (expansion)))
+    alternative: (elifdef_directive
+      condition: (identifier)
+      (define_directive
+        name: (identifier)
+        value: (expansion)))
+    alternative: (elifdef_directive
+      condition: (identifier)
       (define_directive
         name: (identifier)
         value: (expansion)))

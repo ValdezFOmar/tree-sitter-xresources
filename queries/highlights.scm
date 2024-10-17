@@ -13,6 +13,8 @@
 [
   "#ifdef"
   "#ifndef"
+  "#elifdef"
+  "#elifndef"
   "#else"
   "#endif"
 ] @keyword.directive

@@ -129,6 +129,56 @@
     }
   },
   {
+    "type": "elifdef_directive",
+    "named": true,
+    "fields": {
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "define_directive",
+          "named": true
+        },
+        {
+          "type": "define_function_directive",
+          "named": true
+        },
+        {
+          "type": "ifdef_directive",
+          "named": true
+        },
+        {
+          "type": "include_directive",
+          "named": true
+        },
+        {
+          "type": "resource",
+          "named": true
+        },
+        {
+          "type": "undef_directive",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "else_directive",
     "named": true,
     "fields": {},
@@ -172,9 +222,13 @@
     "named": true,
     "fields": {
       "alternative": {
-        "multiple": false,
+        "multiple": true,
         "required": false,
         "types": [
+          {
+            "type": "elifdef_directive",
+            "named": true
+          },
           {
             "type": "else_directive",
             "named": true
@@ -352,6 +406,14 @@
   },
   {
     "type": "#define",
+    "named": false
+  },
+  {
+    "type": "#elifdef",
+    "named": false
+  },
+  {
+    "type": "#elifndef",
     "named": false
   },
   {
