@@ -39,6 +39,9 @@
 (ifdef_directive
   condition: (identifier) @constant)
 
+(elifdef_directive
+  condition: (identifier) @constant)
+
 (expansion) @markup.raw
 
 (component) @variable.member
