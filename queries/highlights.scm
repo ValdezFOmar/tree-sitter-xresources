@@ -23,7 +23,7 @@
 ] @keyword.directive
 
 (define_directive
-  name: (identifier) @constant)
+  name: (identifier) @constant.macro)
 
 (define_function_directive
   name: (identifier) @function.macro)
@@ -34,13 +34,13 @@
 "..." @variable.parameter.builtin
 
 (undef_directive
-  name: (identifier) @constant)
+  name: (identifier) @constant.macro)
 
 (ifdef_directive
-  condition: (identifier) @constant)
+  condition: (identifier) @constant.macro)
 
 (elifdef_directive
-  condition: (identifier) @constant)
+  condition: (identifier) @constant.macro)
 
 (expansion) @markup.raw
 
