@@ -22,11 +22,17 @@ loading the resources.
 - [The C Preprocessor (GNU implementation)][cpp]
 - [tree-sitter-c] grammar
 
+### Neovim
+
+You can install this parser using [`nvim-treesitter`][nvim-treesitter],
+run `TSInstall xresources`.
+
 [XrmGetFileDatabase]: https://man.archlinux.org/man/XrmGetFileDatabase.3#FILE_SYNTAX
 [x-7-resources]: https://man.archlinux.org/man/X.7#RESOURCES
 [xrdb-1]: https://man.archlinux.org/man/xrdb.1
 [cpp]: https://gcc.gnu.org/onlinedocs/cpp/index.html
 [tree-sitter-c]: https://github.com/tree-sitter/tree-sitter-c
+[nvim-treesitter]: https://github.com/nvim-treesitter/nvim-treesitter
 
 [ci]: https://img.shields.io/github/actions/workflow/status/ValdezFOmar/tree-sitter-xresources/ci.yml?logo=github&label=CI
 [discord]: https://img.shields.io/discord/1063097320771698699?logo=discord&label=discord
