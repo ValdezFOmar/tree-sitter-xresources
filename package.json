@@ -2,7 +2,7 @@
   "name": "tree-sitter-xresources",
   "version": "0.1.0",
   "description": "Xresources grammar for tree-sitter",
-  "repository": "github:tree-sitter/tree-sitter-xresources",
+  "repository": "https://github.com/valdezfomar/tree-sitter-xresources",
   "license": "MIT",
   "author": {
     "name": "Omar Valdez",
@@ -10,7 +10,6 @@
   },
   "main": "bindings/node",
   "types": "bindings/node",
-  "type": "module",
   "keywords": [
     "incremental",
     "parsing",
@@ -19,6 +18,7 @@
   ],
   "files": [
     "grammar.js",
+    "tree-sitter.json",
     "binding.gyp",
     "prebuilds/**",
     "bindings/node/*",

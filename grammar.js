@@ -6,7 +6,7 @@ const WHITE_SPACE = /[ \t]/;
 const NEWLINE = /\n/;
 const C_IDENTIFIER = /[a-zA-Z_]\w*/;
 
-export default grammar({
+module.exports = grammar({
   name: 'xresources',
 
   extras: $ => [WHITE_SPACE, $.preprocessor_comment],
