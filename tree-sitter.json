@@ -17,7 +17,7 @@
     }
   ],
   "metadata": {
-    "version": "0.1.1",
+    "version": "0.1.2",
     "license": "MIT",
     "description": "Xresources grammar for tree-sitter",
     "authors": [
