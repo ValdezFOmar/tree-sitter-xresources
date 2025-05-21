@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-xresources",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Xresources grammar for tree-sitter",
   "repository": "https://github.com/valdezfomar/tree-sitter-xresources",
   "license": "MIT",
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "prebuildify": "^6.0.1",
-    "tree-sitter-cli": "^0.24.7"
+    "tree-sitter-cli": "^0.25.4"
   },
   "peerDependencies": {
     "tree-sitter": "^0.21.1"
