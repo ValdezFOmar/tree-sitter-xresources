@@ -12,7 +12,8 @@
         ".Xdefaults",
         ".Xresources"
       ],
-      "highlights": "queries/highlights.scm",
+      "highlights": "queries/xresources/highlights.scm",
+      "injections": "queries/xresources/injections.scm",
       "injection-regex": "^xresources$"
     }
   ],
