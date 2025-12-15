@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-xresources",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Xresources grammar for tree-sitter",
   "type": "module",
   "repository": {
