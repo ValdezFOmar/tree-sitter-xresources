@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-xresources
-        VERSION "0.2.0"
+        VERSION "1.0.0"
         DESCRIPTION "Xresources grammar for tree-sitter"
         HOMEPAGE_URL "https://github.com/valdezfomar/tree-sitter-xresources"
         LANGUAGES C)

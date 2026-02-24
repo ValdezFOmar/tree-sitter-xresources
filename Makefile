@@ -1,6 +1,6 @@
 LANGUAGE_NAME := tree-sitter-xresources
 HOMEPAGE_URL := https://github.com/valdezfomar/tree-sitter-xresources
-VERSION := 0.2.0
+VERSION := 1.0.0
 
 # repository
 SRC_DIR := src
